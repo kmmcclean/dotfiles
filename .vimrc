@@ -13,8 +13,16 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 "Bundles
+Bundle 'honza/vim-snippets'
+Bundle 'UltiSnips'
+Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'WebAPI.vim'
+Bundle 'Gist.vim'
+Bundle 'plantuml-syntax'
+Bundle 'Shougo/vimproc.git'
 Bundle 'dhruvasagar/vim-markify.git'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'jshint.vim'
 "Bundle 'vividchalk.vim'
 Bundle 'Distinguished'
 Bundle 'Solarized'
@@ -29,12 +37,16 @@ Bundle 'a.vim'
 Bundle 'calendar.vim'
 "Bundle 'clang-complete'
 Bundle 'closetag.vim'
-"Bundle 'pyflakes.vim'
+Bundle 'pyflakes.vim'
 Bundle 'scrooloose/nerdcommenter'
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'klen/python-mode'
-Bundle 'klen/python-mode'
-Bundle 'SuperTab'
+"Bundle 'klen/python-mode'
+
+
+Bundle 'Valloric/YouCompleteMe.git'
+"Bundle 'SuperTab'
+"Bundle 'UltiSnips'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'utl.vim'
 Bundle 'tpope/vim-fugitive'
@@ -44,7 +56,8 @@ Bundle 'tpope/vim-rails'
 Bundle 'ruby.vim'
 Bundle 'surround.vim'
 Bundle 'templates.vim'
-Bundle 'msanders/snipmate.vim.git'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'easytags.vim'
 Bundle 'DrawIt'
@@ -194,9 +207,9 @@ set timeoutlen=500
 "netrw settings
 "let g:netrw_preview   = 1
 "let g:netrw_liststyle = 3
-"let g:netrw_winsize=10
+let g:netrw_winsize=30
 "let g:netrw_alto=1
-"let g:netrw_browse_split=4
+let g:netrw_browse_split=4
 
 
 "shortcut to open netrw as vertical split
@@ -270,3 +283,16 @@ endif
 
  "These commands open folds
  set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+let g:gist_detect_filetype = 1
+
+
+inoremap <F7> <C-R>=strftime("%Y %b %d")<CR>
+let g:UltiSnipsSnippetDirectories=["UltiSnips", 'vim-snippets']
+inoremap <leader>e <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
+"inoremap <tab> <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
+"let g:UltiSnipsListSnippets="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"inoremap <leader>e <C-R>=UltiSnips#ExpandSnippetOrJump()<cr>
+let g:ycm_register_as_syntastic_checker = 0
